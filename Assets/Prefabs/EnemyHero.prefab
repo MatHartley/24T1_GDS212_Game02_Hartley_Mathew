@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5846726901735438837}
   m_Layer: 0
   m_Name: EnemyHero
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,3 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodDrop: {fileID: 2141399830894405795, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
+  speed: 2
+  enemyHealthMax: 10
+  enemyHealthCurrent: 0
+  enemyDamage: 10
+  knockbackCounter: 0
+  knockbackTotalTime: 0.5
