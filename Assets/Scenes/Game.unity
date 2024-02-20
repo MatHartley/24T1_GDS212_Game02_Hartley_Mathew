@@ -1170,6 +1170,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286050572}
   m_CullTransparentMesh: 1
+--- !u!1 &1401271848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401271850}
+  - component: {fileID: 1401271849}
+  m_Layer: 0
+  m_Name: Health Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1401271849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401271848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ea3412cb22c0b49bc2a877f35f49ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthMax: 100
+  healthCurrent: 0
+  bloodMax: 100
+  bloodCurrent: 0
+  healthSlider: {fileID: 56787587}
+  bloodSlider: {fileID: 718967277}
+--- !u!4 &1401271850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401271848}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4255154, y: 0.20163488, z: -0.009589222}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1411407258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2314,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2620963031423118598, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2620963031423118598, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2420,3 +2470,4 @@ SceneRoots:
   - {fileID: 8663302025795063035}
   - {fileID: 7796597801878962281}
   - {fileID: 8526469672006918923}
+  - {fileID: 1401271850}

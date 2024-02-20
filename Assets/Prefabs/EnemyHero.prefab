@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1539896406262094844}
   - component: {fileID: 2918880821379648624}
   - component: {fileID: 525185411168327351}
+  - component: {fileID: 5846726901735438837}
   m_Layer: 0
   m_Name: EnemyHero
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2171325808342209313}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.29, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &2918880821379648624
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -184,3 +185,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &5846726901735438837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171325808342209313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38000f188af7a8488c44cc0b6b8a560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodDrop: {fileID: 2141399830894405795, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
