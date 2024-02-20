@@ -1222,7 +1222,9 @@ MonoBehaviour:
   bloodMax: 100
   bloodCurrent: 0
   healthSlider: {fileID: 56787587}
+  healthText: {fileID: 1511348305}
   bloodSlider: {fileID: 718967277}
+  bloodText: {fileID: 1553823783}
 --- !u!4 &1401271850
 Transform:
   m_ObjectHideFlags: 0
@@ -2316,6 +2318,10 @@ PrefabInstance:
       value: EnemyHero
       objectReference: {fileID: 0}
     - target: {fileID: 5846726901735438837, guid: c82a484c9ca36ae4ca11bb3b4772cf33, type: 3}
+      propertyPath: enemyDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846726901735438837, guid: c82a484c9ca36ae4ca11bb3b4772cf33, type: 3}
       propertyPath: enemyHealthMax
       value: 100
       objectReference: {fileID: 0}
@@ -2432,6 +2438,26 @@ PrefabInstance:
     - target: {fileID: 1720797256395053893, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946353614369886529, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298002563841260315, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4396328331373448416, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502089002788386062, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502089002788386062, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7254535770299324834, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
       propertyPath: m_LocalPosition.x

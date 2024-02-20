@@ -9,6 +9,9 @@ public class EnemyAI : MonoBehaviour
     public GameObject bloodDrop;
     private Rigidbody2D rigidBody;
 
+    [Header("Script References")]
+    private HealthManager healthManager;
+
     [Header("Movement Variables")]
     [SerializeField] private float speed = 2f;
 
@@ -25,8 +28,10 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("PlayerCharacter");
-        enemyHealthCurrent = enemyHealthMax;
         rigidBody = GetComponent<Rigidbody2D>();
+        healthManager = FindObjectOfType<HealthManager>();
+
+        enemyHealthCurrent = enemyHealthMax;
     }
 
     // Update is called once per frame
@@ -52,5 +57,16 @@ public class EnemyAI : MonoBehaviour
         stunCounter = stunTotalTime;
 
         enemyHealthCurrent = enemyHealthCurrent - damageTaken;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            healthManager.healthCurrent = healthManager.healthCurrent - enemyDamage;
+
+            stunTotalTime = 1;
+            stunCounter = stunTotalTime;
+        }
     }
 }
