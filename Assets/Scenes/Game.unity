@@ -1095,6 +1095,24 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1219133258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6377317609335738215, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+  m_PrefabInstance: {fileID: 8663302025795063035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1219133262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219133258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6cde8f3ff53c44b82d85ba2ed7909f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 5
 --- !u!1 &1286050572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHero
       objectReference: {fileID: 0}
+    - target: {fileID: 5846726901735438837, guid: c82a484c9ca36ae4ca11bb3b4772cf33, type: 3}
+      propertyPath: enemyHealthMax
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 9008508007690413196, guid: c82a484c9ca36ae4ca11bb3b4772cf33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.29
@@ -2454,7 +2476,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6377317609335738215, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1219133262}
   m_SourcePrefab: {fileID: 100100000, guid: 620de8d9cf94da14c954991552bf888b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
