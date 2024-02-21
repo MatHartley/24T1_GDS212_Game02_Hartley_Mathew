@@ -7,9 +7,9 @@ using TMPro;
 public class HealthManager : MonoBehaviour
 {
     [Header("Health Variable")]
-    [SerializeField] private int healthMax = 100;
+    public int healthMax = 100;
     public int healthCurrent;
-    [SerializeField] private int bloodMax = 100;
+    public int bloodMax = 100;
     public int bloodCurrent;
 
     [Header("UI References")]
@@ -17,6 +17,9 @@ public class HealthManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public Slider bloodSlider;
     public TextMeshProUGUI bloodText;
+
+    [Header("Script References")]
+    public SceneController sceneController;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +31,26 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (healthCurrent > healthMax)
+        {
+            healthCurrent = healthMax;
+        }
+        if (bloodCurrent > bloodMax)
+        {
+            bloodCurrent = bloodMax;
+        }
+
+        //update the UI elements
         healthSlider.value = healthCurrent;
         healthText.text = "Health: " + healthCurrent + "/100";
         bloodSlider.value = bloodCurrent;
         bloodText.text = "Blood: " + bloodCurrent + "/100";
+
+        //loads the end game screen if the player runs out of health
+        if (healthCurrent <= 0)
+        {
+            sceneController.LoadLoseScreen();
+        }
+
     }
 }

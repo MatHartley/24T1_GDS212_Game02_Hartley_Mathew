@@ -19,6 +19,9 @@ public class LookAtMouse : MonoBehaviour
         WatchMouse();
     }
 
+    /// <summary>
+    /// WatchMouse keeps the player character's weapon aimed at the mouse cursor
+    /// </summary>
     void WatchMouse()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - thisTransform.position;

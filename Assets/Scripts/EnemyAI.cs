@@ -24,6 +24,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float stunCounter;
     [SerializeField] private float stunTotalTime;
 
+    [Header("Kill Count")]
+    private int killCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,26 +42,41 @@ public class EnemyAI : MonoBehaviour
     {
         stunCounter -= Time.deltaTime;
 
-        if (stunCounter <= 0)
+        if (stunCounter <= 0) //if not stunned they can move
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
 
         if (enemyHealthCurrent <= 0)
         {
+            //add to the kill count for the end screen
+            killCount = PlayerPrefs.GetInt("Kills", 0);
+            killCount++;
+            PlayerPrefs.SetInt("Kills", killCount);
+
+            //drops a blood pool on death
             Instantiate(bloodDrop, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
-
-    public void TakeDamage(int damageTaken, bool knockFromRight)
+    /// <summary>
+    /// TakeDamage is called from whatever is causing damage to the enemy
+    /// </summary>
+    /// <param name="damageTaken"></param>
+    /// <param name="knockFromRight"></param>
+    public void TakeDamage(int damageTaken)
     {
+
         stunTotalTime = (damageTaken / 10f);
         stunCounter = stunTotalTime;
 
         enemyHealthCurrent = enemyHealthCurrent - damageTaken;
     }
 
+    /// <summary>
+    /// This deals damage to the player if they come into contact with them, and also stuns the enemy allowing the player to move away
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")

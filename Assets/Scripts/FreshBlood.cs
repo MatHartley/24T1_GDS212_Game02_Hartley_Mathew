@@ -16,11 +16,24 @@ public class FreshBlood : MonoBehaviour
         healthManager = FindObjectOfType<HealthManager>();
     }
 
+    /// <summary>
+    /// If the player character moves over the blood, it adds to either the health pool if possible, then the blood pool if possible, then is destroyed
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            if (healthManager.healthCurrent < healthManager.healthMax)
+            {
+                healthManager.healthCurrent += bloodValue;
+            }
+            else if (healthManager.bloodCurrent < healthManager.bloodMax)
+            {
+                healthManager.bloodCurrent += bloodValue;
+            }
 
+            Destroy(this.gameObject);
         }
     }
 }
