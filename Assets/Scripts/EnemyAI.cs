@@ -12,6 +12,10 @@ public class EnemyAI : MonoBehaviour
     [Header("Script References")]
     private HealthManager healthManager;
 
+    [Header("Audio References")]
+    private AudioSource hitSFX;
+    private AudioSource getHitSFX;
+
     [Header("Movement Variables")]
     [SerializeField] private float speed = 2f;
 
@@ -33,6 +37,8 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("PlayerCharacter");
         rigidBody = GetComponent<Rigidbody2D>();
         healthManager = FindObjectOfType<HealthManager>();
+        hitSFX = GameObject.Find("HitSFX").GetComponent<AudioSource>();
+        getHitSFX = GameObject.Find("GetHitSFX").GetComponent<AudioSource>();
 
         enemyHealthCurrent = enemyHealthMax;
     }
@@ -56,6 +62,7 @@ public class EnemyAI : MonoBehaviour
 
             //drops a blood pool on death
             Instantiate(bloodDrop, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
     }
@@ -71,6 +78,8 @@ public class EnemyAI : MonoBehaviour
         stunCounter = stunTotalTime;
 
         enemyHealthCurrent = enemyHealthCurrent - damageTaken;
+
+        getHitSFX.Play();
     }
 
     /// <summary>
@@ -85,6 +94,8 @@ public class EnemyAI : MonoBehaviour
 
             stunTotalTime = 1;
             stunCounter = stunTotalTime;
+
+            hitSFX.Play();
         }
     }
 }

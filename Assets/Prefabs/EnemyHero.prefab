@@ -76,6 +76,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodDrop: {fileID: 2141399830894405795, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
+  hitSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
   speed: 2
   enemyHealthMax: 50
   enemyHealthCurrent: 0

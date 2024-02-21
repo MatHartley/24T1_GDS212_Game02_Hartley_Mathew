@@ -7,6 +7,9 @@ public class FreshBlood : MonoBehaviour
     [Header("ScriptReference")]
     private HealthManager healthManager;
 
+    [Header("Audio Reference")]
+    private AudioSource bloodSFX;
+
     [Header("Blood Variables")]
     [SerializeField] private int bloodValue;
 
@@ -14,6 +17,7 @@ public class FreshBlood : MonoBehaviour
     void Start()
     {
         healthManager = FindObjectOfType<HealthManager>();
+        bloodSFX = GameObject.Find("BloodSFX").GetComponent<AudioSource>();
     }
 
     /// <summary>
@@ -24,6 +28,8 @@ public class FreshBlood : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            bloodSFX.Play();
+
             if (healthManager.healthCurrent < healthManager.healthMax)
             {
                 healthManager.healthCurrent += bloodValue;
