@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodDrop: {fileID: 2141399830894405795, guid: 858ddd0e3b5e2eb48bb0f99c990d8c5c, type: 3}
   speed: 1
-  enemyHealthMax: 40
+  enemyHealthMax: 200
   enemyHealthCurrent: 0
   enemyDamage: 10
   stunCounter: 0

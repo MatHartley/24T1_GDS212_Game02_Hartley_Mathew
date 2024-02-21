@@ -20,6 +20,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // sword damage is based on the current blood stockpile
         switch (healthManager.bloodCurrent)
         {
             case <= 10:
@@ -58,20 +59,15 @@ public class Sword : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Calls the TakeDamage function on the EnemyAI script and applies the damage value of this weapon
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
         {
-            if (collision.transform.position.x <= transform.position.x)
-            {
-                knockFromRight = true;
-            }
-            else
-            {
-                knockFromRight = false;
-            }
-
-            collision.GetComponent<EnemyAI>().TakeDamage(swordDamage, knockFromRight);
+            collision.GetComponent<EnemyAI>().TakeDamage(swordDamage);
         }
     }
 }

@@ -29,17 +29,19 @@ public class EnemySpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //reduce countdowns over time
         speedCount -= Time.deltaTime;
-        Debug.Log("Spawn Speed Up: " + speedCount);
+        //Debug.Log("Spawn Speed Up: " + speedCount);
 
         spawnCount -= Time.deltaTime;
-        Debug.Log("New Spawn: " + spawnCount);
+        //Debug.Log("New Spawn: " + spawnCount);
 
         bigSpawnCount -= Time.deltaTime;
-        Debug.Log("Big Spawn: " + bigSpawnCount);
+        //Debug.Log("Big Spawn: " + bigSpawnCount);
 
         if (speedCount <= 0)
         {
+            //reduces spawn cooldowns every <speedUpTime> seconds
             spawnTime = spawnTime * 0.75f;
             bigSpawnTime = bigSpawnTime * 0.75f;
 
@@ -48,6 +50,7 @@ public class EnemySpawning : MonoBehaviour
 
         if (spawnCount <= 0)
         {
+            //picks a spawn side at random
             spawnLocation = (int)Random.Range(1, 5);
             Debug.Log("Spawn Location: " + spawnLocation);
             GameObject spawn = Instantiate(enemySpawn) as GameObject;
@@ -70,13 +73,14 @@ public class EnemySpawning : MonoBehaviour
                 default:
                     break;
             }
-
+            //reset cooldown
             spawnCount = spawnTime;
         }
 
         if (bigSpawnCount <= 0)
         {
-            spawnLocation = (int)Random.Range(1, 5);
+            //picks a spawn side at random
+            spawnLocation = (int)Random.Range(1, 5); 
             Debug.Log("Spawn Location: " + spawnLocation);
             GameObject bigSpawn = Instantiate(enemyBigSpawn) as GameObject;
 
@@ -98,7 +102,7 @@ public class EnemySpawning : MonoBehaviour
                 default:
                     break;
             }
-
+            //reset cooldown
             bigSpawnCount = bigSpawnTime;
         }
     }
